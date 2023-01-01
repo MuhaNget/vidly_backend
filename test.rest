@@ -1,0 +1,86 @@
+### Create genres
+POST http://localhost:8000/api/genres
+Content-Type: application/json
+# Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2EwNjBiY2MzMGJmNGRlMjM3NGQwYmIiLCJpYXQiOjE2NzE0NTcwOTZ9.MapAjRQbppL5tGdjIT0PsguDxqjrG8Rn0dglH3GTxwI
+
+{
+    "name": "Monkey Pack"
+}
+
+
+### Create Movies
+POST http://localhost:3000/api/movies
+Content-Type: application/json
+
+{
+    "title": "Bad Man",
+    "genreId": "637042ac7f5496a20349bcb7",
+    "numberInStock": 4,
+    "dailyRentalRate": 5
+}
+
+
+### Create Customer
+POST http://localhost:3000/api/customers
+Content-Type: application/json
+
+{
+    "isGold": true,
+    "name": "Ousman",
+    "phone": "12345"
+}
+
+### Create Rentals
+POST http://localhost:3000/api/rentals
+Content-Type: application/json
+
+{
+    "customerId": "63703b71c1a857c8ad81dac7",
+    "movieId": "637229d6329ab5fd7603a846"
+}
+
+### Register Users
+POST http://localhost:8000/api/users
+Content-Type: application/json
+
+{
+    "name": "Marie Jobe",
+    "email": "jobe@gmail.com",
+    "password": "12345"
+}
+
+### Autheticate Users Or Login Users
+POST http://localhost:8000/api/auths
+Content-Type: application/json
+
+{
+    "email": "jobe@gmail.com",
+    "password": "12345"
+}
+
+
+### Fetches all the data from Customer collection
+GET http://localhost:3000/api/movies/all
+
+
+### Fetches all the data from Movie collection
+GET http://localhost:3000/api/customers/all
+
+### Fetches all the data from Genres collection
+GET http://localhost:8000/api/genres
+
+
+### Fetch single data
+GET http://localhost:3000/api/genres/63702b33bb950b2317e81124
+
+### Updates data
+PUT http://localhost:3000/api/genres/63702b33bb950b2317e81124
+Content-Type: application/json
+
+{
+    "name": "Updated genres"
+}
+
+
+### Delete data
+DELETE http://localhost:3000/api/genres/63702beabb950b2317e81127
